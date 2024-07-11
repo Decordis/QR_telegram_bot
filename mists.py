@@ -12,6 +12,15 @@ class Instruction:
                 '3) Бот отправляет вам QR-code! 😎')
         return text
 
+
+class Example:
+    @staticmethod
+
+    def get_example():
+        text = ('Разберем на примере\n'
+                'Ютуб https://www.youtube.com/ \n'
+                'Через пару секунд бот отправлят вам фото вашего qr-кода ✅')
+        return text
 class Help:
     @staticmethod
     def get_help():

@@ -3,7 +3,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 
 import app.buttons as kb
-from mists import Getpng, Help, Instruction
+from mists import Getpng, Help, Instruction, Example
 
 router = Router()
 
@@ -12,6 +12,10 @@ router = Router()
 async def start(message: Message):
     await message.answer('Привет!', reply_markup=kb.main)
 
+@router.message(Command('example'))
+async def get_help(message: Message):
+    text = Example.get_example()
+    await message.answer(text, reply_markup=kb.main)
 
 @router.message(Command('instruction'))
 async def get_help(message: Message):
